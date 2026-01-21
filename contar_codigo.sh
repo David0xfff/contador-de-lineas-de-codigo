@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # =================================================================
-# Contador de líneas de código - Versión Final (SUM al final)
+# Contador de líneas de código 
 # =================================================================
 
 OUTPUT_CSV="reporte_lineas_codigo.csv"
@@ -10,7 +10,6 @@ echo "Analizando el proyecto (incluyendo Web, Progra y Configuración)..."
 echo "Generando: $OUTPUT_CSV"
 echo "------------------------------------------------------------"
 
-# Base de datos expandida de lenguajes
 declare -A LANG_MAP
 LANG_MAP=( 
     ["html"]="HTML" ["css"]="CSS" ["js"]="JavaScript" ["ts"]="TypeScript" 
@@ -65,8 +64,7 @@ printf "%-20s %10s %10s %10s %10s\n" "Language" "files" "blank" "comment" "code"
 echo "----------------------------------------------------------------------------"
 
 if [ -s "$tmp_data" ]; then
-    # 1. Generamos las filas de lenguajes, las ordenamos y las mostramos
-    # También guardamos los datos en el CSV
+
     awk -F"|" '{
         files[$1]+=1; blank[$1]+=$2; comm[$1]+=$3; code[$1]+=$4;
         t_files+=1; t_blank+=$2; t_comm+=$3; t_code+=$4;
