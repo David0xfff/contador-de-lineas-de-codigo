@@ -1,4 +1,4 @@
-# 📊 Code Line Counter (LOC Script)
+# 📊 contador de lineas de codigo
 
 Este script de Bash permite analizar proyectos de software y contar las líneas de código de forma detallada. Clasifica los resultados por lenguaje de programación, separando líneas de código puro, comentarios y líneas en blanco.
 
